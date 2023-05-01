@@ -1,43 +1,43 @@
 import React from "react";
-import {View,StyleSheet,Text,Pressable,Image} from "react-native";
+import { View, StyleSheet, Text, Pressable, Image } from "react-native";
 import moment from "moment";
 import * as WebBrowser from 'expo-web-browser';
 
 const Article = (props) => {
 
-    const goToSource = () =>{
+    const goToSource = () => {
         WebBrowser.openBrowserAsync(props.url);
     }
 
-    return(
+    return (
         <Pressable style={styles.container} onPress={goToSource}>
             {/* image */}
             <Image source={{
                 uri: props.urlToImage
             }}
-            style={styles.image}
+                style={styles.image}
             />
 
-            <View style={{padding: 20}}>
+            <View style={{ padding: 20 }}>
 
 
-        {/*    title */}
-            <Text style={styles.title}>{props.title}</Text>
+                {/*    title */}
+                <Text style={styles.title}>{props.title}</Text>
 
-        {/*    description */}
-            <Text style={styles.description} numberOfLines={3}>
-                {props.description}
-            </Text>
+                {/*    description */}
+                <Text style={styles.description} numberOfLines={3}>
+                    {props.description}
+                </Text>
 
-            <View style={styles.data}>
-                <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
-                <Text style={styles.date}>{moment(props.publishedAt).format("MMM Do YY") }</Text>
-            </View>
+                <View style={styles.data}>
+                    <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
+                    <Text style={styles.date}>{moment(props.publishedAt).format("DD/MMM/YYYY")}</Text>
+                </View>
 
-        {/*     source */}
-            <View style={{marginTop: 10}}>
-                <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
-            </View>
+                {/*     source */}
+                <View style={{ marginTop: 10 }}>
+                    <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
+                </View>
             </View>
         </Pressable>
     )
@@ -46,7 +46,7 @@ const Article = (props) => {
 export default Article;
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         width: "90%",
         alignSelf: "center",
         borderRadius: 40,
@@ -59,40 +59,40 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         marginTop: 20
     },
-    image:{
+    image: {
         height: 200,
         width: "100%",
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40
     },
-    title:{
+    title: {
         fontSize: 18,
         fontWeight: "600",
         marginTop: 10
     },
-    description:{
+    description: {
         fontSize: 16,
         fontWeight: "400",
         marginTop: 10
     },
-    data:{
+    data: {
         flexDirection: "row",
         justifyContent: "space-between",
         marginTop: 10
     },
-    heading:{
+    heading: {
 
     },
-    author:{
+    author: {
         fontWeight: "bold",
         fontSize: 15
     },
-    date:{
+    date: {
         fontWeight: "bold",
         color: "#e63946",
         fontSize: 15
     },
-    source:{
+    source: {
         color: "#e63946",
         fontWeight: "bold",
         fontSize: 18

@@ -1,14 +1,14 @@
-import {View,TextInput,Text,StyleSheet} from "react-native";
+import { View, TextInput, Text, StyleSheet } from "react-native";
 import React from "react";
 
-const SearchBar = (props)=>{
-    return(
+const SearchBar = (props) => {
+    return (
         <View style={styles.container}>
             <TextInput
                 placeholder="Search"
                 style={styles.input}
                 value={props.searchText}
-                onChangeText={(text)=>props.setSearchText(text)}
+                onChangeText={(text) => props.setSearchText(text)}
                 onSubmitEditing={props.onSubmit}
             />
         </View>
@@ -18,11 +18,11 @@ const SearchBar = (props)=>{
 export default SearchBar;
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         margin: 10
     },
-    input:{
-        backgroundColor:"#fff",
+    input: {
+        backgroundColor: "#fff",
         padding: 10,
         borderRadius: 10,
         color: "#000",

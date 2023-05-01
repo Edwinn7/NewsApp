@@ -7,8 +7,8 @@ import axios from "axios";
 const HomeScreen = () => {
     const [articles, setArticles] = useState([]);
     const getNews = () => {
-        axios.get('https://newsapi.org/v2/everything?q=general&apiKey=318acd81579a40d2aacbc41373c71e91&sortBy=publishedAt&sortOrder=desc',{
-            params:{
+        axios.get('https://newsapi.org/v2/everything?q=general&apiKey=318acd81579a40d2aacbc41373c71e91&sortBy=publishedAt&sortOrder=desc', {
+            params: {
                 language: "es"
             }
         })
